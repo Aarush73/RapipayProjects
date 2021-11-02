@@ -1,0 +1,14 @@
+<h1>{{title}}</h1>
+Number 1 : <input type="number" #num1>
+Number 2 : <input type="number" #num2>
+<input type="button" (click)="sum(num1.value, num2.value)" value="Do Sum">
+<div>{{res}}</div>
+
+Number 1 : <input type="number" #num3>
+<input type="button" (click)="factors(num3.value)" value="Do Factors">
+<div>{{factor}}</div>
+<mat-slider min="1" max="100" step="2" value="50"></mat-slider>
+
+<p>B: {{b | currency:'INR'}}</p>
+{{title|uppercase}}
+{{title|lowercase}}

@@ -1,0 +1,20 @@
+<!-- <h2>{{hero1.name | uppercase}} Details</h2>
+<div><span>id: </span>{{hero1.id}}</div>
+<div><span>name: </span>{{hero1.name}}</div>
+<div>
+    <label for="name">Hero name: </label>
+    <input id="name" [(ngModel)]="hero1.name" placeholder="name">
+</div>
+<h2>{{hero2.name | uppercase}} Details</h2>
+<div><span>id: </span>{{hero2.id}}</div>
+<div><span>name: </span>{{hero2.name}}</div>
+<div>
+    <label for="name">Hero name: </label>
+    <input id="name" [(ngModel)]="hero2.name" placeholder="name">
+</div> -->
+<li *ngFor="let hero of heroes">
+<h2>My Heroes</h2>
+<ul class="heroes">
+    <li>{{hero.id}}</li>
+    <li>{{hero.name}}</li>
+</ul>

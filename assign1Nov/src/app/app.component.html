@@ -1,0 +1,44 @@
+<div style="text-align: center;">
+  <form style="background-color: darkslategrey; width: 30%; display: inline-block;">
+
+    <br><label>Name : </label>&nbsp;&nbsp;&nbsp;
+    <input type="text" value="{{name}}" [(ngModel)]="name" (keyup)="doKeyUp($event)" #formName><br>
+    <b>{{name}}</b>
+    <br>
+    <hr>
+
+    <br><label>Project : </label>&nbsp;&nbsp;&nbsp;
+    <input type="text" value="{{project}}" [(ngModel)]="project" (keyup)=doKeyUp1($event) #formProject><br>
+    <b>{{project}}</b>
+    <br>
+    <hr>
+
+    <br><label>Min Salary : </label>&nbsp;&nbsp;&nbsp;
+    <input type="number" #min><br><br>
+    <hr>
+
+    <br><label>Max Salary : </label>&nbsp;&nbsp;&nbsp;
+    <input type="number" #max><br><br>
+    <hr>
+
+    <button (click)="search(formName.value, formProject.value, min.value, max.value)">Find Employee</button>
+    <br>
+  </form>
+
+  <div *ngIf="check">
+    <table style="border: 1px solid black">
+      <tr>
+        <th>Name</th>
+        <th>Project</th>
+        <th>Salary</th>
+      </tr>
+      <tr *ngFor="let emp of filterArr">
+        <td>{{emp.name}}</td>
+        <td>{{emp.project}}</td>
+        <td>{{emp.salary}}</td>
+      </tr>
+    </table>
+  </div>
+  <div *ngIf="!check">No Employee Found</div>
+</div>
+
